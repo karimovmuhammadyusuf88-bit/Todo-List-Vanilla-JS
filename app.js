@@ -32,6 +32,12 @@
 
 
 
+      // Boshlang'ich test ma'lumotlari (Agar LocalStorage bo'sh bo'lsa ishlaydi)
+    const defaultTodos = [
+        { id: 1, title: "Express bilan TODO API yozish", desc: "CRUD endpointlar: GET (pagination), POST, PATCH, DELETE.", status: "active", created: "2026-05-14" },
+        { id: 2, title: "Swagger response formatni tushunish", desc: "API response: count, next, previous, results bilan keladi.", status: "completed", created: "2026-05-13" },
+    ];
+
     // LocalStorage dan yuklash yoki default qiymat berish (YANGI!)
     let todos = JSON.parse(localStorage.getItem('todos')) || defaultTodos;
 
