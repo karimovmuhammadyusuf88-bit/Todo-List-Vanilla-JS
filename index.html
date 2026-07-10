@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List — Vanilla JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="todo-app">
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="header-title">
+                <h1>Todo List</h1>
+                <p>Vanilla JS + LocalStorage (paginated)</p>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button class="btn" id="refreshBtn">Refresh</button>
+            <button class="btn btn-primary" id="newTodoBtn">+ New todo</button>
+        </div>
+    </div>
+
+    <div class="controls-row">
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search by title...">
+        </div>
+        <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <select class="sort-select" id="sortSelect">
+            <option value="">Newest</option>
+            <option value="newest">Z-A</option>
+            <option value="oldest">A-Z</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <div class="input-group" style="flex: 2;">
+            <label>Title</label>
+            <input type="text" class="input-field" id="todoTitle" placeholder="Masalan: Express TODO API yozish">
+        </div>
+        <div class="input-group" style="flex: 3;">
+            <label>Description</label>
+            <textarea class="input-field" id="todoDesc" rows="1" placeholder="Qisqacha izoh..."></textarea>
+        </div>
+        <div class="form-buttons">
+            <button class="btn btn-primary" id="addBtn" style="background-color: #1e293b; border-color: #334155;">Add</button>
+            <button class="btn" id="clearBtn">Clear</button>
+        </div>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-badge">
+            <span class="dot" style="background-color: var(--accent-blue);"></span> Total: <strong id="totalCount">0</strong>
+        </div>
+        <div class="stat-badge">
+            <span class="dot" style="background-color: var(--accent-green);"></span> Done: <strong id="doneCount">0</strong>
+        </div>
+        <div class="stat-badge">
+            <span class="dot" style="background-color: var(--accent-orange);"></span> Active: <strong id="activeCount">0</strong>
+        </div>
+    </div>
+
+    <div class="todo-list" id="todoContainer"></div>
+
+    <div class="pagination">
+        <button class="btn" id="prevBtn" disabled>&larr; Prev</button>
+        <div class="page-info">Page <span id="currentPage">1</span> / <span id="totalPages">1</span></div>
+        <button class="btn" id="nextBtn" disabled>Next &rarr;</button>
+    </div>
+</div>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
